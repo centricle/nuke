@@ -28,8 +28,11 @@ function renderWhitelist(whitelist) {
 }
 
 async function addDomain() {
-  const domain = domainInput.value.trim().toLowerCase();
+  let domain = domainInput.value.trim().toLowerCase();
   if (!domain) return;
+
+  // Strip protocol if user included it
+  domain = domain.replace(/^https?:\/\//, '');
 
   const { whitelist = [] } = await chrome.storage.sync.get('whitelist');
 
