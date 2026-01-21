@@ -11,7 +11,7 @@ async function loadWhitelist() {
 
 function renderWhitelist(whitelist) {
   if (whitelist.length === 0) {
-    whitelistEl.innerHTML = '<div class="empty-state">No domains whitelisted</div>';
+    whitelistEl.innerHTML = '<div class="empty-state">No domains excluded.</div>';
     return;
   }
 
@@ -80,7 +80,7 @@ async function nuke() {
 function showStatus(message) {
   statusEl.textContent = message;
   statusEl.classList.add('show');
-  setTimeout(() => statusEl.classList.remove('show'), 3000);
+  setTimeout(() => statusEl.classList.remove('show'), 3500);
 }
 
 addBtn.addEventListener('click', addDomain);
