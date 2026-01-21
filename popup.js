@@ -34,6 +34,9 @@ async function addDomain() {
   // Strip protocol if user included it
   domain = domain.replace(/^https?:\/\//, '');
 
+  // Normalize: strip www. prefix (we generate both variants when nuking)
+  domain = domain.replace(/^www\./, '');
+
   const { whitelist = [] } = await chrome.storage.sync.get('whitelist');
 
   if (whitelist.includes(domain)) {
@@ -60,7 +63,9 @@ async function nuke() {
 
   const excludeOrigins = whitelist.flatMap(domain => [
     `https://${domain}`,
-    `http://${domain}`
+    `http://${domain}`,
+    `https://www.${domain}`,
+    `http://www.${domain}`
   ]);
 
   await chrome.browsingData.remove(
