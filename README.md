@@ -5,7 +5,7 @@ A Chrome extension that clears cookies – except for domains you whitelist.
 ## Installation
 
 ### Chrome Web Store
-*(Coming soon)*
+[Install from Chrome Web Store](https://chromewebstore.google.com/detail/nuke/jffpcdpgmjgdmnkihichojlnldpmafae)
 
 ### Manual
 1. Clone this repo
