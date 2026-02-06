@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "NUKE",
+  "version": "1.0.0",
+  "description": "Whitelist domains you want to keep, nuke all other cookies with one click.",
+  "permissions": ["browsingData", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NUKE"
+  }
+}
